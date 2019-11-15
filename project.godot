@@ -16,7 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Last Fortress"
+run/main_scene="res://Ingame.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1080
+window/size/height=1920
+window/size/test_width=540
+window/size/test_height=960
+window/handheld/orientation="portrait"
 
 [rendering]
 
