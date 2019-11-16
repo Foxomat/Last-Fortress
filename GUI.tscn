@@ -10,8 +10,9 @@ anchor_bottom = 1.0
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 anchor_right = 1.0
-margin_right = -160.0
-margin_bottom = 60.0
+margin_top = 10.0
+margin_right = -192.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 40.0
@@ -23,6 +24,6 @@ nine_patch_stretch = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -160.0
+margin_left = -192.0
 texture = ExtResource( 3 )
 expand = true
