@@ -4,16 +4,16 @@
 [ext_resource path="res://assets/placeholder/energybar_fill.png" type="Texture" id=2]
 [ext_resource path="res://assets/placeholder/icon.png" type="Texture" id=3]
 
-
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 anchor_right = 1.0
-margin_top = 10.0
-margin_right = -192.0
-margin_bottom = 50.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -197.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 40.0

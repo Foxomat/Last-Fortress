@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/placeholder/Angriffswiesenplatzhalter.png" type="Texture" id=1]
 [ext_resource path="res://TowerGrid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera.gd" type="Script" id=3]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI.gd" type="Script" id=5]
 
 [node name="Ingame" type="Node"]
 
@@ -25,3 +27,8 @@ margin_bottom = 6016.0
 position = Vector2( 540, 960 )
 current = true
 script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
