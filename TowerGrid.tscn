@@ -28,6 +28,7 @@ ItemList/styles/selected_focus = null
 [node name="TowerGrid" type="ItemList"]
 margin_right = 908.0
 margin_bottom = 2368.0
+mouse_filter = 1
 theme = SubResource( 2 )
 custom_constants/vseparation = 0
 custom_constants/line_separation = 0

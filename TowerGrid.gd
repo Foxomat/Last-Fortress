@@ -5,3 +5,7 @@ func _ready():
 	
 	for i in range(0, (16*6)):
 		$".".add_item("", texture, true)
+
+func _input(event: InputEvent):
+	if event is InputEventScreenTouch:
+		print(event.position)
