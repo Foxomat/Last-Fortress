@@ -1,7 +1,7 @@
 extends Camera2D
 
 onready var camera = $"."
-var max_downscroll = 1628 - (1920/3)
+var max_downscroll = 16*148 - 640
 
 func _input(event: InputEvent):
 	if event is InputEventScreenDrag:
