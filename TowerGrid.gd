@@ -6,6 +6,6 @@ func _ready():
 	for i in range(0, (16*6)):
 		$".".add_item("", texture, true)
 
-func _input(event: InputEvent):
-	if event is InputEventScreenTouch:
-		print(event.position)
+func _process(delta):
+	if is_anything_selected():
+		set_item_icon_modulate($".".get_selected_items()[0], Color(0, 1, 1, 1))
