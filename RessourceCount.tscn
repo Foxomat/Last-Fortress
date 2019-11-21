@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/placeholder/icon164.png" type="Texture" id=1]
+
+[node name="ResContainer1" type="CenterContainer"]
+margin_right = 182.0
+margin_bottom = 164.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 9.0
+margin_right = 173.0
+margin_bottom = 164.0
+texture_normal = ExtResource( 1 )
