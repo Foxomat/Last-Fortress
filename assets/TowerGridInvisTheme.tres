@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[resource]
+ItemList/colors/font_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
+ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
+ItemList/constants/hseparation = 0
+ItemList/constants/icon_margin = 0
+ItemList/constants/line_separation = 0
+ItemList/constants/vseparation = 0
+ItemList/fonts/font = null
+ItemList/styles/bg = SubResource( 1 )
+ItemList/styles/bg_focus = null
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = null
+ItemList/styles/selected = null
+ItemList/styles/selected_focus = null

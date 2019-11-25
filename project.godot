@@ -19,6 +19,10 @@ config/name="Last Fortress"
 run/main_scene="res://Ingame.tscn"
 config/icon="res://assets/placeholder/icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=1080
