@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FenceLifeBack.bmp-204582742f84da64ef462664e6067f85.stex"
+path="res://.import/FenceLife.bmp-0790137dcfa45a42da56f25f16670344.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder/FenceLifeBack.bmp"
-dest_files=[ "res://.import/FenceLifeBack.bmp-204582742f84da64ef462664e6067f85.stex" ]
+source_file="res://assets/GUI/FenceLife.bmp"
+dest_files=[ "res://.import/FenceLife.bmp-0790137dcfa45a42da56f25f16670344.stex" ]
 
 [params]
 

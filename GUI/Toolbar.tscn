@@ -1,21 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/placeholder/icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/GUI/Toolbar_BG.png" type="Texture" id=1]
 [ext_resource path="res://assets/placeholder/Modern Machine Italic.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/placeholder/icon164.png" type="Texture" id=3]
-[ext_resource path="res://GUI/UnitsButton.gd" type="Script" id=4]
-[ext_resource path="res://GUI/UnitsInfo.gd" type="Script" id=5]
-[ext_resource path="res://GUI/UnitsCount.gd" type="Script" id=6]
+[ext_resource path="res://GUI/UnitsInfo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/MoneyInfo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/AmmoInfo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/ExplosivesInfo.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/placeholder/ressource Spacer.png" type="Texture" id=7]
-[ext_resource path="res://assets/placeholder/icon148.png" type="Texture" id=8]
+[ext_resource path="res://GUI/PrestiegeInfo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 64
-use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="Toolbar" type="TextureRect"]
@@ -25,94 +20,47 @@ anchor_bottom = 1.0
 margin_left = -182.0
 mouse_filter = 0
 texture = ExtResource( 1 )
-expand = true
 
 [node name="ItemContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="DayCount" type="Label" parent="ItemContainer"]
+[node name="SPACER" type="VSplitContainer" parent="ItemContainer"]
 margin_right = 182.0
-margin_bottom = 45.0
+
+[node name="SPACER2" type="VSplitContainer" parent="ItemContainer"]
+margin_top = 4.0
+margin_right = 182.0
+margin_bottom = 4.0
+
+[node name="DayCount" type="Label" parent="ItemContainer"]
+margin_top = 8.0
+margin_right = 182.0
+margin_bottom = 53.0
 custom_fonts/font = SubResource( 1 )
 text = "Day X"
 align = 1
 
-[node name="Units" type="CenterContainer" parent="ItemContainer"]
-margin_top = 49.0
-margin_right = 182.0
-margin_bottom = 213.0
+[node name="Units" parent="ItemContainer" instance=ExtResource( 3 )]
+margin_top = 57.0
+margin_bottom = 221.0
 
-[node name="UnitsButton" type="TextureButton" parent="ItemContainer/Units"]
-margin_left = 9.0
-margin_right = 173.0
-margin_bottom = 164.0
-texture_normal = ExtResource( 3 )
-script = ExtResource( 4 )
+[node name="Money" parent="ItemContainer" instance=ExtResource( 4 )]
+margin_top = 225.0
+margin_bottom = 389.0
 
-[node name="UnitsInfo" type="PopupPanel" parent="ItemContainer/Units/UnitsButton"]
-margin_left = -811.891
-margin_top = 61.2186
-margin_right = -67.8907
-margin_bottom = 241.219
-script = ExtResource( 5 )
+[node name="Ammo" parent="ItemContainer" instance=ExtResource( 5 )]
+margin_top = 393.0
+margin_bottom = 557.0
 
-[node name="UnitsCount" type="Label" parent="ItemContainer/Units/UnitsButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 0.752941 )
-text = "00"
-align = 1
-valign = 1
-script = ExtResource( 6 )
-
-[node name="Money" type="CenterContainer" parent="ItemContainer"]
-margin_top = 217.0
-margin_right = 182.0
-margin_bottom = 381.0
-
-[node name="MoneyButton" type="TextureButton" parent="ItemContainer/Money"]
-margin_left = 9.0
-margin_right = 173.0
-margin_bottom = 164.0
-toggle_mode = true
-texture_normal = ExtResource( 3 )
-
-[node name="PopupPanel" type="PopupPanel" parent="ItemContainer/Money/MoneyButton"]
-margin_left = -747.0
-margin_top = -2.0
-margin_right = -180.0
-margin_bottom = 136.0
-
-[node name="Ammo" type="CenterContainer" parent="ItemContainer"]
-margin_top = 385.0
-margin_right = 182.0
-margin_bottom = 549.0
-
-[node name="AmmoButton" type="TextureButton" parent="ItemContainer/Ammo"]
-margin_left = 9.0
-margin_right = 173.0
-margin_bottom = 164.0
-toggle_mode = true
-texture_normal = ExtResource( 3 )
-
-[node name="Explosives" type="CenterContainer" parent="ItemContainer"]
-margin_top = 553.0
-margin_right = 182.0
-margin_bottom = 717.0
-
-[node name="ExplosivesButton" type="TextureButton" parent="ItemContainer/Explosives"]
-margin_left = 9.0
-margin_right = 173.0
-margin_bottom = 164.0
-toggle_mode = true
-texture_normal = ExtResource( 3 )
+[node name="Explosives" parent="ItemContainer" instance=ExtResource( 6 )]
+margin_top = 561.0
+margin_bottom = 725.0
 
 [node name="SEPERATOR" type="CenterContainer" parent="ItemContainer"]
-margin_top = 721.0
+margin_top = 729.0
 margin_right = 182.0
-margin_bottom = 731.0
+margin_bottom = 739.0
 
 [node name="SEPERATOR" type="TextureRect" parent="ItemContainer/SEPERATOR"]
 margin_left = 5.0
@@ -120,16 +68,6 @@ margin_right = 177.0
 margin_bottom = 10.0
 texture = ExtResource( 7 )
 
-[node name="Prestiege" type="CenterContainer" parent="ItemContainer"]
-margin_top = 735.0
-margin_right = 182.0
-margin_bottom = 883.0
-
-[node name="PrestiegeButton" type="TextureButton" parent="ItemContainer/Prestiege"]
-margin_left = 17.0
-margin_right = 165.0
-margin_bottom = 148.0
-toggle_mode = true
-texture_normal = ExtResource( 8 )
-[connection signal="button_down" from="ItemContainer/Units/UnitsButton" to="ItemContainer/Units/UnitsButton/UnitsInfo" method="_on_UnitsButton_button_down"]
-[connection signal="popup_hide" from="ItemContainer/Units/UnitsButton/UnitsInfo" to="ItemContainer/Units/UnitsButton" method="_on_UnitsInfo_popup_hide"]
+[node name="Prestiege" parent="ItemContainer" instance=ExtResource( 8 )]
+margin_top = 743.0
+margin_bottom = 891.0

@@ -3,9 +3,9 @@
 [ext_resource path="res://GUI/Toolbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/placeholder/bar_bg.png" type="Texture" id=2]
 [ext_resource path="res://assets/placeholder/energybar_fill.png" type="Texture" id=3]
-[ext_resource path="res://assets/placeholder/FenceLifeBack.bmp" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/FenceLifeBack.bmp" type="Texture" id=4]
 [ext_resource path="res://assets/placeholder/FenceLifeOver.bmp" type="Texture" id=5]
-[ext_resource path="res://assets/placeholder/FenceLife.bmp" type="Texture" id=6]
+[ext_resource path="res://assets/GUI/FenceLife.bmp" type="Texture" id=6]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -19,7 +19,7 @@ anchor_right = 1.0
 margin_left = 5.0
 margin_top = 5.0
 margin_right = -197.0
-margin_bottom = 29.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 value = 40.0
