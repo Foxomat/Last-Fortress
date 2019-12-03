@@ -1,23 +1,43 @@
 extends Node
 
-var unit_count = 0
 var money_count = 0
+signal money_change
+var unit_count = 0
+signal unit_change
 var ammo_count = 0
+signal ammo_change
 var explosives_count = 0
+signal explosives_change
 var prestiege_count = 0
+signal prestiege_change
+
+var current_day = 0
+signal day_change
 
 func _ready():
 	yield(get_tree().create_timer(1.5),"timeout")
-	unit_count = 12
-	yield(get_tree().create_timer(0.1),"timeout")
 	money_count = 128412798
+	emit_signal("money_change")
+	
+	yield(get_tree().create_timer(0.1),"timeout")
+	unit_count = 12
+	emit_signal("unit_change")
+	
 	yield(get_tree().create_timer(0.1),"timeout")
 	ammo_count = 72164721839392
+	emit_signal("ammo_change")
+	
 	yield(get_tree().create_timer(0.1),"timeout")
 	explosives_count = 1320
+	emit_signal("explosives_change")
+	
 	yield(get_tree().create_timer(0.1),"timeout")
 	prestiege_count = 764090
-
+	emit_signal("prestiege_change")
+	
+	yield(get_tree().create_timer(0.1),"timeout")
+	current_day = 42
+	emit_signal("day_change")
 
 
 func shorten_value(value: String) -> String:

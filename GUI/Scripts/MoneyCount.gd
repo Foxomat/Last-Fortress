@@ -1,18 +1,11 @@
 extends Label
 
-onready var old_value = "0"
 
 func _ready():
+	get_node("/root/Global").connect("money_change", self, "_on_money_change")
 	$".".text = "0"
 
-func _process(delta):
+func _on_money_change():
 	var money = str(Global.money_count)
-	
-	#refreshes the value (if it changed)
-	if old_value != money:
-		old_value = money
-		
-		# shorten the string, e.g. 12000 -> 12,0K
-		money = Global.shorten_value(money)
-			
-		$".".text = money
+	money = Global.shorten_value(money)
+	$".".text = money

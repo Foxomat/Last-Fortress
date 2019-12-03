@@ -1,18 +1,10 @@
 extends Label
 
-onready var old_value = "0"
-
 func _ready():
+	get_node("/root/Global").connect("ammo_change", self, "_on_ammo_change")
 	$".".text = "0"
 
-func _process(delta):
+func _on_ammo_change():
 	var ammo = str(Global.ammo_count)
-	
-	#refreshes the value (if it changed)
-	if old_value != ammo:
-		old_value = ammo
-		
-		# shorten the string, e.g. 12000 -> 12,0K
-		ammo = Global.shorten_value(ammo)
-			
-		$".".text = ammo
+	ammo = Global.shorten_value(ammo)
+	$".".text = ammo
