@@ -14,6 +14,9 @@ font_data = ExtResource( 4 )
 [node name="Ressource" type="CenterContainer"]
 margin_right = 182.0
 margin_bottom = 164.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RessourceButton" type="TextureButton" parent="."]
 margin_left = 12.0
@@ -43,5 +46,8 @@ text = "00"
 align = 1
 valign = 1
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_down" from="RessourceButton" to="RessourceButton/RessourceInfo" method="_on_RessourceButton_button_down"]
 [connection signal="popup_hide" from="RessourceButton/RessourceInfo" to="RessourceButton" method="_on_RessourceInfo_popup_hide"]

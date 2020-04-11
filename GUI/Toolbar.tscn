@@ -30,7 +30,6 @@ anchor_bottom = 1.0
 custom_constants/separation = 6
 
 [node name="SPACER" type="VBoxContainer" parent="ItemContainer"]
-editor/display_folded = true
 margin_right = 182.0
 margin_bottom = 5.0
 custom_constants/separation = 5
@@ -84,7 +83,6 @@ margin_top = 734.0
 margin_bottom = 882.0
 
 [node name="SPACER2" type="VBoxContainer" parent="ItemContainer"]
-editor/display_folded = true
 margin_top = 888.0
 margin_right = 182.0
 margin_bottom = 889.0

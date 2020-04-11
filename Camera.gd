@@ -2,8 +2,9 @@ extends Camera2D
 
 onready var camera = $"."
 var max_downscroll = 16*148 - 640
+	
 
-func _input(event: InputEvent):
+func _input(event):
 	if event is InputEventScreenDrag:
 		if event.position.x <= 888:
 			camera.offset.y = max(   min(camera.offset.y - event.relative.y, max_downscroll),   0)

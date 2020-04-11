@@ -14,6 +14,8 @@ signal __prestiege_change
 var __current_day = 0
 signal __day_change
 
+
+
 #-----------------------------------------------------Functions--------------------------------------------------------------
 
 func _ready():
