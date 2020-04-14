@@ -17,5 +17,5 @@ func _input(event):
 func _on_Spawntimer_timeout():
 	var enemy = Enemy.instance()
 	enemy.position = Vector2(400, 50)
-	add_child(enemy)
-	move_child(enemy, 5)
+	$"Enemies".add_child(enemy)
+

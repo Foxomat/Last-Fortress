@@ -38,4 +38,6 @@ script = ExtResource( 6 )
 [node name="Spawntimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Enemies" type="YSort" parent="."]
 [connection signal="timeout" from="Spawntimer" to="." method="_on_Spawntimer_timeout"]

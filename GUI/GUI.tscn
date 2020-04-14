@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GUI/Toolbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/placeholder/bar_bg.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/GUI/FenceLife_back.bmp" type="Texture" id=4]
 [ext_resource path="res://assets/GUI/FenceLife_over.png" type="Texture" id=5]
 [ext_resource path="res://assets/GUI/FenceLife.bmp" type="Texture" id=6]
+[ext_resource path="res://GUI/Fence HP.gd" type="Script" id=7]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -40,3 +41,7 @@ texture_over = ExtResource( 5 )
 texture_progress = ExtResource( 6 )
 fill_mode = 3
 tint_progress = Color( 1, 0.00392157, 0.00392157, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
