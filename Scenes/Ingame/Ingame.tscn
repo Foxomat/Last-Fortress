@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/placeholder/Angriffswiesenplatzhalter.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Ingame/BuildingGrid/Grid_Tile_6x16.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Ingame/Camera/IngameCamera.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Ingame/Ingame.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Ingame/GUI/GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/TapCollider/TapCollider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemy/BlueGuy/BlueGuy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Ingame/Fence/Fence.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Ingame/BuildingGrid/BuildingGrid.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Building/Turret/Turret.tscn" type="PackedScene" id=10]
+
+[node name="Ingame" type="Node"]
+script = ExtResource( 4 )
+Collider = ExtResource( 6 )
+BlueGuy = ExtResource( 7 )
+
+[node name="GUI Layer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="GUI Layer" instance=ExtResource( 5 )]
+mouse_filter = 2
+
+[node name="AttackField" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Fence" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 1216 )
+
+[node name="IngameCamera" type="Camera2D" parent="."]
+position = Vector2( 540, 960 )
+current = true
+script = ExtResource( 3 )
+
+[node name="Spawntimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="GridSprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, 1280 )
+
+[node name="TowerGrid" parent="." instance=ExtResource( 9 )]
+margin_top = 1280.0
+margin_bottom = 3648.0
+
+[node name="Enemies" type="YSort" parent="."]
+
+[node name="Turret" parent="." instance=ExtResource( 10 )]
+position = Vector2( 386.294, 1524.74 )
+[connection signal="timeout" from="Spawntimer" to="." method="_on_Spawntimer_timeout"]

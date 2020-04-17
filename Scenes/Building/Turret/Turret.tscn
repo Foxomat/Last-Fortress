@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Building/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Building/Turret/Turret.gd" type="Script" id=2]
+
+[node name="Turret" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="EnemyDetection" type="RayCast2D" parent="." index="2"]
+enabled = true
+cast_to = Vector2( 0, -3500 )
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="TestFrequency" type="Timer" parent="." index="3"]
+wait_time = 0.25
+autostart = true
+[connection signal="timeout" from="TestFrequency" to="." method="_Collision_Test"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Enemy/BlueGuy/BlueGuy1_1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Enemy/BlueGuy/BlueGuy1_2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Enemy/Enemy.gd" type="Script" id=3]
+
+
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Enemy" type="Area2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 7
+collision_mask = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "Collision Layer:
+1: Fence Collision
+2: Tap Collision
+3: Projectile Collision"
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="DamageTimer" type="Timer" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Enemy_area_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
